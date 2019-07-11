@@ -13,6 +13,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 </head>
 
 <body>
@@ -52,7 +53,7 @@
 	</div>
 
 	<div class="choice-container">
-		<div class="choice button-container">
+		<div class="choice">
 			<button class="button button-rock">
 				ROCK
 			</button>
@@ -70,9 +71,47 @@
 			<h4><small class="text-muted">vs.</small></h4>
 		</div>
 
-		<div class="choice">
-			Thinking...
+		<div class="choice thinking">
+			<div class="spinner-grow spinner-grow-sm text-info" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+			...thinking
 		</div>
+	</div>
+
+	<div class="win-percentage">
+		Win Percentage:
+	</div>
+
+	<div class="bar-container">
+		<div class="whole-bar">
+			<div class="progress-bar">
+				33%
+			</div>
+		</div>
+	</div>
+
+	<div class="table-container">
+		<button class="button button-clear">
+			Clear Table
+		</button>
+
+		<table class="table table-dark table-striped table-hover table-sm">
+			<thead>
+				<tr>
+					<th scope="col">You</th>
+					<th scope="col">Bot</th>
+					<th scope="col">Result</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Rock</td>
+					<td>Scissors</td>
+					<td>Win</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>

@@ -18,5 +18,5 @@ Create Read Update and Delete framework using JS
 - [ ] tabs -> vs bot / vs friend
 - [ ] scroll to top of record keeping button when starting to scroll
 - [ ] all elements sticky when scrolling
-- [ ] zebra striped table
-- [ ] google fonts for RPS buttons
+- [x] zebra striped table
+- [x] google fonts for RPS buttons

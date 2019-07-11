@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -8,32 +9,40 @@ body {
 }
 
 .header-container {
+	display: flex;
+	flex-flow: wrap;
 	background-color: #444;
 	border-bottom: 1px solid grey;
 }
 
 .header {
-	float: left;
-	width: 20%;
+	flex: 1;
 	padding-top: 10px;
 	text-align: center;
+border: 1px solid red;
 }
 
-.player {
-	float: left;
+.player-container, .choice-container {
+	display: table;
+	width: 100%;
+}
+
+.player, .choice {
+	display: table-cell;
 	width: 40%;
 	padding-top: 50px;
 	text-align: center;
 	font-size: 24px;
+border: 1px solid red;
+}
+
+.spacer {
+	width: 20%;
 }
 
 .choice {
-	float: left;
-	width: 40%;
 	padding: 10px 0;
-	text-align: center;
 	font-size: 20px;
-	border: 1px solid red;
 }
 
 .button {
@@ -41,6 +50,7 @@ body {
 	border-radius: 20px;
 	color: white;
 	padding: 5px 10px;
+	font-weight: bold;
 	cursor: pointer;
 	outline: none;
 	box-shadow: 0 4px #555;
@@ -88,19 +98,58 @@ body {
 	transform: translateY(2px);
 }
 
-.spacer {
-	width: 20%;
+.thinking {
+	font-style: oblique;
 }
 
-.header-container::after, .player-container::after {
-	content: "";
-	display: table;
-	clear: both;
+.win-percentage {
+	display: block;
+	padding: 50px 11% 0;
+border: 1px solid red;
 }
 
-@media screen and (max-width: 815px) {
-	.header {
-		width: 33%;
-	}
+.bar-container {
+	display: block;
+	padding: 0px 10%;
+border: 1px solid red;
 }
 
+.whole-bar {
+	width: 100%;
+	border: 3px solid #888;
+	border-radius: 20px;
+}
+
+.progress-bar {
+  width: 33%;
+  height: 30px;
+  background-color: #13a277;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 20px;
+}
+
+.table-container {
+	display: block;
+	padding: 50px 10% 0;
+border: 1px solid red;
+}
+
+.button-clear {
+	background-color: #f5850a;
+}
+
+.button-clear:hover {
+	background-color: #c35300;
+}
+
+.button-clear:active {
+	background-color: #c35300;
+	box-shadow: 0 3px #444;
+	transform: translateY(2px);
+}
+
+.table {
+	margin: 10px 0 0;
+}
