@@ -20,3 +20,4 @@ Create Read Update and Delete framework using JS
 - [ ] all elements sticky when scrolling
 - [x] zebra striped table
 - [x] google fonts for RPS buttons
+- [ ] add bot puns
