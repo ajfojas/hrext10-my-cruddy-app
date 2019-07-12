@@ -4,20 +4,15 @@ Create Read Update and Delete framework using JS
  ## Tasks
 
  ### Basic Reqs
-- [ ] Where to store data? (local storage)
-- [ ] How to capture data? (button choice)
-- [ ] How to modify data? (delete action)
-- [ ] How to view data? (style?)
-- [ ] UI/UX considerations (how are we going to use this)
+- [x] Where to store data? (local storage)
+- [x] How to capture data? (button choice)
+- [x] How to modify data? (delete action)
+- [x] How to view data? (style?)
+- [x] UI/UX considerations (how are we going to use this)
 
  ### Advanced Reqs
-- [ ] update/delete column
-- [ ] add input player name
-- [ ] accordion -> expand record keeping
-- [ ] add 2 player
-- [ ] tabs -> vs bot / vs friend
-- [ ] scroll to top of record keeping button when starting to scroll
-- [ ] all elements sticky when scrolling
+- [x] add input player name
+- [x] scroll to top of record keeping button when starting to scroll
 - [x] zebra striped table
 - [x] google fonts for RPS buttons
 - [ ] add bot puns
