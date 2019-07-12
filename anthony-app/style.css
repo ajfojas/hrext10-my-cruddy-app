@@ -132,7 +132,7 @@ body {
 
 .table-container {
 	display: block;
-	padding: 50px 10% 0;
+	padding: 50px 10% 20px;
 }
 
 .button-clear {
@@ -156,7 +156,7 @@ body {
 .button-scroll-top {
 	display: none;
 	position: fixed;
-	bottom: 10px;
+	bottom: 20px;
 	left: 1.5%;
 	z-index: 99;
 }

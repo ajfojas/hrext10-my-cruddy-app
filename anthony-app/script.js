@@ -1,24 +1,3 @@
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {
-	scrollFunction()
-};
-
-let scrollFunction = function() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		$('.button-scroll-top').css("display", "block");
-	} else {
-		$('.button-scroll-top').css("display", "none");
-	}
-}
-
-// When the user clicks on the button, scroll to the top of the document
-let topFunction = function() {
-	document.body.scrollTop = 0; // For Safari
-	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-
-
 //localStorage functions
 let storeChoice = function(key, value) {
 	return window.localStorage.setItem(key, value);
@@ -29,10 +8,11 @@ let clearDatabase = function() {
 };
 
 let showDatabase = function() {
-	let winCount = 0;
-
 	$('tbody').html("");
-	let orderedStorage = Object.entries(window.localStorage).sort(function(a, b){return a[0] - b[0]});
+	let winCount = 0;
+	let orderedStorage = Object.entries(window.localStorage)
+		.filter(element => element[0] !== "name")
+		.sort(function(a, b){return a[0] - b[0]});
 
 	for(let i = orderedStorage.length - 1; i >= 0; i--) {
 		let round = orderedStorage[i][0];
@@ -64,17 +44,67 @@ let showDatabase = function() {
 		$('.progress-bar').css("width", `${percentage}%`);
 		$('.progress-bar').css("margin-left", "0");
 	}
+
+	// $('.player-you').html("");
+
+	// if(window.localStorage.getItem(name) !== undefined) {
+	// 	$('.player-you').append(`
+	// 		${window.localStorage.getItem('name')}&nbsp
+	// 		<button class="button-edit btn btn-outline-secondary btn-sm" type="button" id="button-addon2">edit</button>`);
+	// } else if(window.localStorage.getItem(name) === "") {
+	// 	$('.player-you').append(`
+	// 		YOU&nbsp
+	// 		<button class="button-edit btn btn-outline-secondary btn-sm" type="button" id="button-addon2">edit</button>`);
+	// }
+};
+
+//additional functionality
+let randomElement = function(array) {
+	let randomIndex = Math.floor(Math.random() * array.length);
+	return array[randomIndex];
 };
 
 let botChoice = function() {
 	let choices = ["Rock", "Paper", "Scissors"];
-	let randomIndex = Math.floor(Math.random() * choices.length);
-	return choices[randomIndex];
+	return randomElement(choices);
 };
 
 let resetAnswers = function() {
 	return [];
 };
+
+let scrollFunction = function() {
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		$('.button-scroll-top').css("display", "block");
+	} else {
+		$('.button-scroll-top').css("display", "none");
+	}
+};
+
+window.onscroll = function() { //shows button when user scrolls down 20px from top of document
+	scrollFunction()
+};
+
+let topFunction = function() { //scrolls to top of document when user clicks on button
+	document.body.scrollTop = 0; //for Safari
+	document.documentElement.scrollTop = 0; //for Chrome, Firefox, IE and Opera
+};
+
+let botThoughts = function() {
+	let thoughts = ["...thinking", "Ready to \"Rock\"", "Thinking of something \"Tearable\"", "I\'m a \"Cut\" above the rest", "...hmm"];
+	return randomElement(thoughts);
+};
+
+let botThinking = function() {
+	$('.thinking').html("");
+	$('.thinking').append(`
+		<div class="spinner-grow spinner-grow-sm text-info" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+		${botThoughts()}`);
+	setTimeout(botThinking, 5000);
+};
+botThinking();
 
 $(document).ready(function() {
 	showDatabase();
@@ -151,8 +181,18 @@ $(document).ready(function() {
 	});
 
 	$('.player-you').on("click", ".button-submit", function(event) {
+		// event.preventDefault();
+		// let $name = $('.name').val();
+		// storeChoice("name", $name);
+		// showDatabase();
+
+
+
 		event.preventDefault();
 		let name = $('.name').val();
+
+		// storeChoice("name", name);
+		
 		$('.player-you').html("");
 		if(name === "") {
 			$('.player-you').append(`

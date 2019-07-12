@@ -15,4 +15,5 @@ Create Read Update and Delete framework using JS
 - [x] scroll to top of record keeping button when starting to scroll
 - [x] zebra striped table
 - [x] google fonts for RPS buttons
-- [ ] add bot puns
+- [x] add bot puns
+- [x] input player name uses local storage (almost done, bug exists where name is still part of length)
